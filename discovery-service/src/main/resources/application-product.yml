@@ -1,0 +1,21 @@
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: https://discovery-service-0:8761/eureka/,https://discovery-service-1:8761/eureka/
+
+logging:
+  level:
+    org.springframework.security: ERROR
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health, info, prometheus"
+  endpoint:
+    health:
+      show-details: never
+    shutdown:
+      access: none
